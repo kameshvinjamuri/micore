@@ -92,6 +92,12 @@ program micore
   write (*,*) 'CDER: ', cder
   write (*,*) 'COST: ', cost
 
+  open (unit=1,file="fm_results.txt",action="write",status="replace")
+  write (1,*) 'TAU:  ', tau
+  write (1,*) 'CDER: ', cder
+  write (1,*) 'COST: ', cost
+  close (1)
+
   ! finalize
   deallocate (lut)
   close(IUI)
